@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Benim Sitem</title>
 
     <meta name="google-site-verification" content="4EJ1XsIPV41BOv4m1KtBhoyAuOtFOjGkoXHX6sMaWa8" />
 
     <style>
+
         body {
             background-color: black;
             color: white;
+            font-family: Arial, sans-serif;
         }
 
         h1 {
@@ -17,18 +18,1953 @@
             font-size: 50px;
         }
 
+        h2 {
+            color: orange;
+            margin-top: 50px;
+        }
+
         p {
             font-size: 20px;
         }
+
+        button {
+            font-size: 18px;
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            font-size: 18px;
+            padding: 8px;
+        }
+
+
+        /* =========================
+           DİNOZOR
+        ========================= */
+
+        #dinoOyun {
+            width: 600px;
+            max-width: 90%;
+            height: 200px;
+            border: 3px solid white;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        #dinozor {
+            position: absolute;
+            left: 50px;
+            bottom: 0;
+            font-size: 42px;
+        }
+
+        #kaktus {
+            position: absolute;
+            left: 600px;
+            bottom: 0;
+            font-size: 28px;
+        }
+
+        .zipla {
+            animation: zipla 0.75s;
+        }
+
+        @keyframes zipla {
+
+            0% {
+                bottom: 0;
+            }
+
+            50% {
+                bottom: 130px;
+            }
+
+            100% {
+                bottom: 0;
+            }
+
+        }
+
+
+        /* =========================
+           SÜRPRİZ DİNOZOR
+        ========================= */
+
+        #surprizDino {
+            position: fixed;
+            right: -500px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 350px;
+            z-index: 9999;
+            transition: right 0.3s;
+        }
+
+        #surprizDino.geldi {
+            right: 20px;
+        }
+
+
+        /* =========================
+           PENALTI
+        ========================= */
+
+        #penaltiOyun {
+            width: 600px;
+            max-width: 90%;
+            height: 350px;
+            border: 3px solid white;
+            position: relative;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        #kale {
+            width: 500px;
+            height: 250px;
+            border: 8px solid white;
+            border-bottom: none;
+            position: absolute;
+            left: 50%;
+            top: 25px;
+            transform: translateX(-50%);
+        }
+
+        #kaleci {
+            position: absolute;
+            font-size: 60px;
+            left: 50%;
+            bottom: 5px;
+            transform: translateX(-50%);
+            transition: all 0.4s;
+        }
+
+        #top {
+            position: absolute;
+            font-size: 35px;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            transition: all 0.4s;
+        }
+
+        .sol {
+            left: 15% !important;
+        }
+
+        .orta {
+            left: 50% !important;
+        }
+
+        .sag {
+            left: 85% !important;
+        }
+
+        #penaltiSonuc {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           ARABA KAÇIŞ
+        ========================= */
+
+        #arabaOyun {
+            width: 600px;
+            max-width: 90%;
+            height: 450px;
+            border: 4px solid white;
+            background-color: #333;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        #yol {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+        }
+
+        .serit {
+            position: absolute;
+            width: 8px;
+            height: 70px;
+            background-color: white;
+            top: -80px;
+        }
+
+        #serit1 {
+            left: 33%;
+        }
+
+        #serit2 {
+            left: 66%;
+        }
+
+        #oyuncuAraba {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 55px;
+            transition: left 0.15s;
+            z-index: 5;
+        }
+
+        .engelAraba {
+            position: absolute;
+            font-size: 50px;
+            top: -70px;
+            z-index: 4;
+        }
+
+        .arabaSol {
+            left: 17%;
+        }
+
+        .arabaOrta {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .arabaSag {
+            left: 83%;
+        }
+
+        #arabaSonuc {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #arabaPuan {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           SLASH TARZI ARENA
+        ========================= */
+
+        #slashOyun {
+            width: 700px;
+            max-width: 90%;
+            height: 450px;
+            border: 4px solid white;
+            background-color: #171717;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        #slashOyuncu {
+            position: absolute;
+            font-size: 42px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .slashTop {
+            position: absolute;
+            font-size: 22px;
+        }
+
+        .slashDusman {
+            position: absolute;
+            font-size: 38px;
+            z-index: 8;
+        }
+
+        #slashKilic {
+            position: absolute;
+            font-size: 35px;
+            display: none;
+            z-index: 12;
+        }
+
+        #slashBilgi {
+            font-size: 18px;
+        }
+
+        #slashPuan {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #slashCan {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <h1>Merhaba Dünya!</h1>
+
+    <!-- =========================
+         ANA SAYFA
+    ========================= -->
+
+    <h1>Siteme Hoş Geldin!</h1>
 
     <p>Bu benim ilk web sitem.</p>
 
-</body>
+    <p>Sıfırdan kodlama öğreniyorum! 💻</p>
 
+    <p>Aynı zamanda sitemi geliştirmeye çalışıyorum.</p>
+
+    <p>Oyun, bilgi ve birden fazla çeşit ile ilgili bir sitedir.</p>
+
+
+    <button onclick="mesajGoster()">
+        Tıkla Bana
+    </button>
+
+    <p id="mesaj"></p>
+
+
+
+    <!-- =========================
+         SAYI TAHMİN
+    ========================= -->
+
+    <h2>🎯 Sayı Tahmin Oyunu</h2>
+
+    <p>
+        1 ile 10 arasında bir sayı tuttum!
+    </p>
+
+    <input
+        type="number"
+        id="tahmin"
+        min="1"
+        max="10"
+        placeholder="Tahminin"
+    >
+
+    <button onclick="tahminEt()">
+        Tahmin Et
+    </button>
+
+    <p id="sonuc"></p>
+
+
+
+    <!-- =========================
+         DİNOZOR
+    ========================= -->
+
+    <h2>🦖 Dinozor Oyunu</h2>
+
+    <p>
+        Space tuşuna basarak zıpla ve kaktüslerden kaç!
+    </p>
+
+    <div id="dinoOyun">
+
+        <div id="dinozor">
+            🦖
+        </div>
+
+        <div id="kaktus">
+            🌵
+        </div>
+
+    </div>
+
+    <p>
+        Puan:
+        <span id="dinoPuan">0</span>
+    </p>
+
+    <p id="dinoSonuc"></p>
+
+    <button onclick="dinoBaslat()">
+        Oyunu Başlat
+    </button>
+
+
+
+    <!-- =========================
+         PENALTI
+    ========================= -->
+
+    <h2>⚽ Penaltı Oyunu</h2>
+
+    <p>
+        10 penaltı kullan!
+        Kaleciyi geçip gol atmaya çalış!
+    </p>
+
+    <div id="penaltiOyun">
+
+        <div id="kale">
+
+            <div id="kaleci">
+                🧤
+            </div>
+
+        </div>
+
+        <div id="top">
+            ⚽
+        </div>
+
+    </div>
+
+    <p>
+        Gol:
+        <span id="golSayisi">0</span>
+        /
+        10
+    </p>
+
+    <p id="penaltiSonuc">
+        Şut yönünü seç!
+    </p>
+
+    <button onclick="penaltiAt('sol')">
+        👈 SOL
+    </button>
+
+    <button onclick="penaltiAt('orta')">
+        ⬆️ ORTA
+    </button>
+
+    <button onclick="penaltiAt('sag')">
+        👉 SAĞ
+    </button>
+
+    <button onclick="penaltiBaslat()">
+        🔄 Yeniden Başlat
+    </button>
+
+
+
+    <!-- =========================
+         ARABA KAÇIŞ
+    ========================= -->
+
+    <h2>🚗 Araba Kaçış</h2>
+
+    <p>
+        A tuşu ile sola, D tuşu ile sağa git!
+        Gelen arabalara çarpmamaya çalış!
+    </p>
+
+    <div id="arabaOyun">
+
+        <div id="yol">
+
+            <div class="serit" id="serit1"></div>
+
+            <div class="serit" id="serit2"></div>
+
+        </div>
+
+        <div id="oyuncuAraba">
+            🚗
+        </div>
+
+    </div>
+
+    <p id="arabaPuan">
+        Puan: 0
+    </p>
+
+    <p id="arabaSonuc">
+        Oyunu başlat!
+    </p>
+
+    <button onclick="arabaBaslat()">
+        🚗 Oyunu Başlat
+    </button>
+
+
+
+    <!-- =========================
+         SLASH TARZI ARENA
+    ========================= -->
+
+    <h2>⚔️ Slash Arena</h2>
+
+    <p id="slashBilgi">
+        WASD ile hareket et!
+        Rakiplerden kaç, sarı topları topla ve puan kazan!
+        Space ile saldır!
+    </p>
+
+    <div id="slashOyun">
+
+        <div id="slashOyuncu">
+            🧍
+        </div>
+
+        <div id="slashKilic">
+            ⚔️
+        </div>
+
+    </div>
+
+    <p id="slashPuan">
+        Puan: 0
+    </p>
+
+    <p id="slashCan">
+        ❤️ Can: 3
+    </p>
+
+    <p id="slashSonuc">
+        Oyunu başlat!
+    </p>
+
+    <button onclick="slashBaslat()">
+        ⚔️ Oyunu Başlat
+    </button>
+
+
+
+    <!-- SÜRPRİZ DİNOZOR -->
+
+    <div id="surprizDino">
+        🦖
+    </div>
+
+
+
+    <script>
+
+
+        /* =========================
+           ANA SAYFA
+        ========================= */
+
+        function mesajGoster() {
+
+            document.getElementById("mesaj").innerHTML =
+                "Oyun oynamak ister misin? <br><br>" +
+
+                "<button onclick='evet()'>Evet</button>" +
+
+                "<button onclick='hayir()'>Hayır</button>";
+
+        }
+
+
+        function evet() {
+
+            document.getElementById("mesaj").innerHTML =
+                "Harika! 🎮<br><br>" +
+
+                "Oyuna geçiyoruz!";
+
+            document.querySelector("h2").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function hayir() {
+
+            document.getElementById("mesaj").innerHTML =
+                "Sen bilirsin 😄<br><br>" +
+
+                "Sitemi kullandığın için teşekkür ederim!";
+
+        }
+
+
+
+        /* =========================
+           SAYI TAHMİN
+        ========================= */
+
+        let tutulanSayi =
+            Math.floor(Math.random() * 10) + 1;
+
+
+        function tahminEt() {
+
+            let tahmin =
+                Number(
+                    document.getElementById("tahmin").value
+                );
+
+
+            if (tahmin == tutulanSayi) {
+
+                document.getElementById("sonuc").innerHTML =
+                    "🎉 Doğru bildin!";
+
+            }
+
+            else if (tahmin > tutulanSayi) {
+
+                document.getElementById("sonuc").innerHTML =
+                    "Daha küçük bir sayı dene!";
+
+            }
+
+            else {
+
+                document.getElementById("sonuc").innerHTML =
+                    "Daha büyük bir sayı dene!";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           DİNOZOR
+        ========================= */
+
+        let dinoCalisiyor = false;
+        let dinoPuan = 0;
+        let dinoTimer;
+        let puanTimer;
+
+
+        function dinoBaslat() {
+
+            dinoCalisiyor = true;
+            dinoPuan = 0;
+
+
+            document.getElementById("dinoPuan").innerText =
+                dinoPuan;
+
+
+            document.getElementById("dinoSonuc").innerText =
+                "Oyun başladı! 🦖";
+
+
+            let kaktus =
+                document.getElementById("kaktus");
+
+
+            kaktus.style.left = "600px";
+
+
+            document.getElementById("surprizDino")
+                .classList.remove("geldi");
+
+
+            clearInterval(dinoTimer);
+            clearInterval(puanTimer);
+
+
+            dinoTimer = setInterval(function() {
+
+                let konum =
+                    parseInt(kaktus.style.left);
+
+
+                konum -= 6;
+
+
+                if (konum < -50) {
+
+                    konum = 600;
+
+                }
+
+
+                kaktus.style.left =
+                    konum + "px";
+
+
+                carpismaKontrol();
+
+            }, 30);
+
+
+            puanTimer = setInterval(function() {
+
+                if (dinoCalisiyor) {
+
+                    dinoPuan++;
+
+
+                    document.getElementById("dinoPuan").innerText =
+                        dinoPuan;
+
+
+                    if (dinoPuan >= 3000) {
+
+                        dinoCalisiyor = false;
+
+
+                        clearInterval(dinoTimer);
+                        clearInterval(puanTimer);
+
+
+                        document.getElementById("dinoSonuc").innerHTML =
+                            "🎉 3000 PUANA ULAŞTIN!<br><br>" +
+                            "🎁 SÜRPRİZ!";
+
+
+                        document.getElementById("surprizDino")
+                            .classList.add("geldi");
+
+                    }
+
+                }
+
+            }, 100);
+
+        }
+
+
+        function dinoZipla() {
+
+            if (!dinoCalisiyor) {
+                return;
+            }
+
+
+            let dino =
+                document.getElementById("dinozor");
+
+
+            if (!dino.classList.contains("zipla")) {
+
+                dino.classList.add("zipla");
+
+
+                setTimeout(function() {
+
+                    dino.classList.remove("zipla");
+
+                }, 750);
+
+            }
+
+        }
+
+
+        function carpismaKontrol() {
+
+            let dino =
+                document.getElementById("dinozor");
+
+            let kaktus =
+                document.getElementById("kaktus");
+
+
+            let dinoRect =
+                dino.getBoundingClientRect();
+
+            let kaktusRect =
+                kaktus.getBoundingClientRect();
+
+
+            let dinoSol =
+                dinoRect.left + 12;
+
+            let dinoSag =
+                dinoRect.right - 12;
+
+            let dinoUst =
+                dinoRect.top + 8;
+
+            let dinoAlt =
+                dinoRect.bottom - 5;
+
+
+            let kaktusSol =
+                kaktusRect.left + 5;
+
+            let kaktusSag =
+                kaktusRect.right - 5;
+
+            let kaktusUst =
+                kaktusRect.top + 5;
+
+            let kaktusAlt =
+                kaktusRect.bottom;
+
+
+            if (
+
+                dinoSag > kaktusSol &&
+                dinoSol < kaktusSag &&
+                dinoAlt > kaktusUst &&
+                dinoUst < kaktusAlt
+
+            ) {
+
+                dinoCalisiyor = false;
+
+                clearInterval(dinoTimer);
+                clearInterval(puanTimer);
+
+
+                document.getElementById("dinoSonuc").innerText =
+                    "💥 Oyunun bitti! Puanın: " +
+                    dinoPuan;
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.code === "Space") {
+
+                    event.preventDefault();
+
+                    dinoZipla();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           PENALTI
+        ========================= */
+
+        let penaltiSayisi = 0;
+        let golSayisi = 0;
+        let penaltiAktif = true;
+
+
+        function penaltiBaslat() {
+
+            penaltiSayisi = 0;
+            golSayisi = 0;
+            penaltiAktif = true;
+
+
+            document.getElementById("golSayisi").innerText =
+                golSayisi;
+
+
+            document.getElementById("penaltiSonuc").innerText =
+                "Şut yönünü seç! ⚽";
+
+
+            document.getElementById("kaleci").className = "";
+            document.getElementById("kaleci").classList.add("orta");
+
+
+            document.getElementById("top").className = "";
+            document.getElementById("top").classList.add("orta");
+
+        }
+
+
+        function penaltiAt(yon) {
+
+            if (!penaltiAktif) {
+                return;
+            }
+
+
+            if (penaltiSayisi >= 10) {
+                return;
+            }
+
+
+            penaltiSayisi++;
+
+
+            let yonler =
+                ["sol", "orta", "sag"];
+
+
+            let kaleciYon =
+                yonler[
+                    Math.floor(
+                        Math.random() * 3
+                    )
+                ];
+
+
+            let kaleci =
+                document.getElementById("kaleci");
+
+
+            let top =
+                document.getElementById("top");
+
+
+            kaleci.className = "";
+            kaleci.classList.add(kaleciYon);
+
+
+            top.className = "";
+            top.classList.add(yon);
+
+
+            if (yon !== kaleciYon) {
+
+                golSayisi++;
+
+
+                document.getElementById("golSayisi").innerText =
+                    golSayisi;
+
+
+                document.getElementById("penaltiSonuc").innerText =
+                    "⚽ GOOOOOL! 🔥";
+
+            }
+
+            else {
+
+                document.getElementById("penaltiSonuc").innerText =
+                    "🧤 KALECİ KURTARDI!";
+
+            }
+
+
+            if (penaltiSayisi >= 10) {
+
+                penaltiAktif = false;
+
+
+                setTimeout(function() {
+
+                    document.getElementById("penaltiSonuc").innerHTML =
+                        "🏆 OYUN BİTTİ!<br><br>" +
+
+                        "10 penaltıda " +
+                        golSayisi +
+                        " gol attın!";
+
+                }, 500);
+
+            }
+
+        }
+
+
+
+        /* =========================
+           ARABA KAÇIŞ
+        ========================= */
+
+        let arabaAktif = false;
+        let arabaSerit = 1;
+        let arabaPuan = 0;
+        let arabaHiz = 5;
+
+        let arabaTimer;
+        let arabaPuanTimer;
+        let arabaOlusturmaTimer;
+        let seritAnimasyonTimer;
+
+
+        function arabaBaslat() {
+
+            arabaAktif = true;
+
+            arabaSerit = 1;
+
+            arabaPuan = 0;
+
+            arabaHiz = 5;
+
+
+            document.getElementById("arabaPuan").innerText =
+                "Puan: 0";
+
+
+            document.getElementById("arabaSonuc").innerText =
+                "Kaç! 🚗💨";
+
+
+            let oyuncu =
+                document.getElementById("oyuncuAraba");
+
+
+            oyuncu.style.left = "50%";
+
+
+            document.querySelectorAll(".engelAraba")
+                .forEach(function(araba) {
+
+                    araba.remove();
+
+                });
+
+
+            clearInterval(arabaTimer);
+            clearInterval(arabaPuanTimer);
+            clearInterval(arabaOlusturmaTimer);
+            clearInterval(seritAnimasyonTimer);
+
+
+            let seritler =
+                document.querySelectorAll(".serit");
+
+
+            seritler.forEach(function(serit) {
+
+                serit.style.top = "-80px";
+
+            });
+
+
+            seritAnimasyonTimer =
+                setInterval(function() {
+
+                    if (!arabaAktif) {
+                        return;
+                    }
+
+
+                    seritler.forEach(function(serit) {
+
+                        let top =
+                            parseInt(serit.style.top);
+
+
+                        top += arabaHiz;
+
+
+                        if (top > 450) {
+                            top = -80;
+                        }
+
+
+                        serit.style.top =
+                            top + "px";
+
+                    });
+
+                }, 30);
+
+
+            arabaPuanTimer =
+                setInterval(function() {
+
+                    if (arabaAktif) {
+
+                        arabaPuan++;
+
+
+                        document.getElementById("arabaPuan").innerText =
+                            "Puan: " + arabaPuan;
+
+
+                        if (arabaPuan % 100 === 0) {
+
+                            arabaHiz += 0.7;
+
+                        }
+
+                    }
+
+                }, 100);
+
+
+            arabaOlusturmaTimer =
+                setInterval(function() {
+
+                    if (arabaAktif) {
+
+                        engelOlustur();
+
+                    }
+
+                }, 1000);
+
+
+            arabaTimer =
+                setInterval(function() {
+
+                    if (!arabaAktif) {
+                        return;
+                    }
+
+
+                    let arabalar =
+                        document.querySelectorAll(".engelAraba");
+
+
+                    arabalar.forEach(function(araba) {
+
+                        let top =
+                            parseFloat(araba.dataset.top);
+
+
+                        top += arabaHiz;
+
+
+                        araba.dataset.top =
+                            top;
+
+
+                        araba.style.top =
+                            top + "px";
+
+
+                        carpismaAraba(araba);
+
+
+                        if (top > 500) {
+                            araba.remove();
+                        }
+
+                    });
+
+                }, 30);
+
+        }
+
+
+        function engelOlustur() {
+
+            if (!arabaAktif) {
+                return;
+            }
+
+
+            let araba =
+                document.createElement("div");
+
+
+            araba.className =
+                "engelAraba";
+
+
+            let serit =
+                Math.floor(
+                    Math.random() * 3
+                );
+
+
+            if (serit === 0) {
+                araba.classList.add("arabaSol");
+            }
+
+            else if (serit === 1) {
+                araba.classList.add("arabaOrta");
+            }
+
+            else {
+                araba.classList.add("arabaSag");
+            }
+
+
+            let arabalar =
+                ["🚙", "🚕", "🚘", "🚓"];
+
+
+            araba.innerText =
+                arabalar[
+                    Math.floor(
+                        Math.random() * arabalar.length
+                    )
+                ];
+
+
+            araba.dataset.serit =
+                serit;
+
+
+            araba.dataset.top =
+                -70;
+
+
+            araba.style.top =
+                "-70px";
+
+
+            document.getElementById("arabaOyun")
+                .appendChild(araba);
+
+        }
+
+
+        function carpismaAraba(araba) {
+
+            let oyuncu =
+                document.getElementById("oyuncuAraba");
+
+
+            let oyuncuRect =
+                oyuncu.getBoundingClientRect();
+
+
+            let arabaRect =
+                araba.getBoundingClientRect();
+
+
+            let carpisti =
+
+                oyuncuRect.left <
+                arabaRect.right &&
+
+                oyuncuRect.right >
+                arabaRect.left &&
+
+                oyuncuRect.top <
+                arabaRect.bottom &&
+
+                oyuncuRect.bottom >
+                arabaRect.top;
+
+
+            if (carpisti) {
+
+                arabaOyunBitti();
+
+            }
+
+        }
+
+
+        function arabaOyunBitti() {
+
+            arabaAktif = false;
+
+
+            clearInterval(arabaTimer);
+            clearInterval(arabaPuanTimer);
+            clearInterval(arabaOlusturmaTimer);
+            clearInterval(seritAnimasyonTimer);
+
+
+            document.getElementById("arabaSonuc").innerHTML =
+                "💥 ÇARPTIN!<br><br>" +
+
+                "🏆 Puanın: " +
+                arabaPuan;
+
+        }
+
+
+        /* A VE D */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (!arabaAktif) {
+                    return;
+                }
+
+
+                if (
+                    event.key === "a" ||
+                    event.key === "A"
+                ) {
+
+                    if (arabaSerit > 0) {
+
+                        arabaSerit--;
+
+                        arabaKonumGuncelle();
+
+                    }
+
+                }
+
+
+                if (
+                    event.key === "d" ||
+                    event.key === "D"
+                ) {
+
+                    if (arabaSerit < 2) {
+
+                        arabaSerit++;
+
+                        arabaKonumGuncelle();
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        function arabaKonumGuncelle() {
+
+            let oyuncu =
+                document.getElementById("oyuncuAraba");
+
+
+            if (arabaSerit === 0) {
+
+                oyuncu.style.left = "17%";
+
+            }
+
+            else if (arabaSerit === 1) {
+
+                oyuncu.style.left = "50%";
+
+            }
+
+            else {
+
+                oyuncu.style.left = "83%";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           SLASH ARENA
+        ========================= */
+
+        let slashAktif = false;
+
+        let slashX = 50;
+        let slashY = 50;
+
+        let slashPuan = 0;
+        let slashCan = 3;
+
+        let slashHareketTimer;
+        let slashTopTimer;
+        let slashDusmanTimer;
+        let slashSaldiriTimer;
+
+
+        function slashBaslat() {
+
+            slashAktif = true;
+
+            slashX = 50;
+            slashY = 50;
+
+            slashPuan = 0;
+            slashCan = 3;
+
+
+            document.getElementById("slashPuan").innerText =
+                "Puan: 0";
+
+
+            document.getElementById("slashCan").innerText =
+                "❤️ Can: 3";
+
+
+            document.getElementById("slashSonuc").innerText =
+                "ARENA BAŞLADI! ⚔️";
+
+
+            let oyuncu =
+                document.getElementById("slashOyuncu");
+
+
+            oyuncu.style.left = "50%";
+            oyuncu.style.top = "50%";
+
+
+            document.querySelectorAll(".slashTop")
+                .forEach(function(top) {
+                    top.remove();
+                });
+
+
+            document.querySelectorAll(".slashDusman")
+                .forEach(function(dusman) {
+                    dusman.remove();
+                });
+
+
+            clearInterval(slashHareketTimer);
+            clearInterval(slashTopTimer);
+            clearInterval(slashDusmanTimer);
+            clearInterval(slashSaldiriTimer);
+
+
+            /* PUAN */
+
+            slashHareketTimer =
+                setInterval(function() {
+
+                    if (!slashAktif) {
+                        return;
+                    }
+
+
+                    slashPuan++;
+
+
+                    document.getElementById("slashPuan").innerText =
+                        "Puan: " + slashPuan;
+
+                }, 100);
+
+
+
+            /* TOPLAR */
+
+            slashTopTimer =
+                setInterval(function() {
+
+                    if (!slashAktif) {
+                        return;
+                    }
+
+
+                    slashTopOlustur();
+
+                }, 1400);
+
+
+
+            /* RAKİPLER */
+
+            slashDusmanTimer =
+                setInterval(function() {
+
+                    if (!slashAktif) {
+                        return;
+                    }
+
+
+                    slashDusmanOlustur();
+
+                }, 1800);
+
+
+
+            /* RAKİPLERİ HAREKET ETTİR */
+
+            slashSaldiriTimer =
+                setInterval(function() {
+
+                    if (!slashAktif) {
+                        return;
+                    }
+
+
+                    slashDusmanlariHareketEttir();
+
+                    slashToplariKontrolEt();
+
+                    slashDusmanCarpisma();
+
+                }, 50);
+
+        }
+
+
+        /* TOP OLUŞTUR */
+
+        function slashTopOlustur() {
+
+            let top =
+                document.createElement("div");
+
+
+            top.className =
+                "slashTop";
+
+
+            top.innerText =
+                "🟡";
+
+
+            let x =
+                Math.random() * 90 + 5;
+
+            let y =
+                Math.random() * 85 + 5;
+
+
+            top.style.left =
+                x + "%";
+
+
+            top.style.top =
+                y + "%";
+
+
+            top.dataset.x =
+                x;
+
+
+            top.dataset.y =
+                y;
+
+
+            document.getElementById("slashOyun")
+                .appendChild(top);
+
+        }
+
+
+
+        /* DÜŞMAN OLUŞTUR */
+
+        function slashDusmanOlustur() {
+
+            let dusman =
+                document.createElement("div");
+
+
+            dusman.className =
+                "slashDusman";
+
+
+            dusman.innerText =
+                "👾";
+
+
+            let kenar =
+                Math.floor(
+                    Math.random() * 4
+                );
+
+
+            let x;
+            let y;
+
+
+            if (kenar === 0) {
+
+                x = 5;
+                y = Math.random() * 90 + 5;
+
+            }
+
+            else if (kenar === 1) {
+
+                x = 90;
+                y = Math.random() * 90 + 5;
+
+            }
+
+            else if (kenar === 2) {
+
+                x = Math.random() * 90 + 5;
+                y = 5;
+
+            }
+
+            else {
+
+                x = Math.random() * 90 + 5;
+                y = 90;
+
+            }
+
+
+            dusman.style.left =
+                x + "%";
+
+
+            dusman.style.top =
+                y + "%";
+
+
+            dusman.dataset.x =
+                x;
+
+
+            dusman.dataset.y =
+                y;
+
+
+            document.getElementById("slashOyun")
+                .appendChild(dusman);
+
+        }
+
+
+
+        /* DÜŞMANLAR OYUNCUYA YAKLAŞSIN */
+
+        function slashDusmanlariHareketEttir() {
+
+            let dusmanlar =
+                document.querySelectorAll(".slashDusman");
+
+
+            dusmanlar.forEach(function(dusman) {
+
+                let x =
+                    parseFloat(dusman.dataset.x);
+
+
+                let y =
+                    parseFloat(dusman.dataset.y);
+
+
+                let dx =
+                    slashX - x;
+
+
+                let dy =
+                    slashY - y;
+
+
+                let mesafe =
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    );
+
+
+                if (mesafe > 0) {
+
+                    x +=
+                        (dx / mesafe) * 0.18;
+
+                    y +=
+                        (dy / mesafe) * 0.18;
+
+                }
+
+
+                dusman.dataset.x =
+                    x;
+
+
+                dusman.dataset.y =
+                    y;
+
+
+                dusman.style.left =
+                    x + "%";
+
+
+                dusman.style.top =
+                    y + "%";
+
+            });
+
+        }
+
+
+
+        /* TOPLARI AL */
+
+        function slashToplariKontrolEt() {
+
+            let toplar =
+                document.querySelectorAll(".slashTop");
+
+
+            toplar.forEach(function(top) {
+
+                let x =
+                    parseFloat(top.dataset.x);
+
+                let y =
+                    parseFloat(top.dataset.y);
+
+
+                let dx =
+                    slashX - x;
+
+                let dy =
+                    slashY - y;
+
+
+                let mesafe =
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    );
+
+
+                if (mesafe < 6) {
+
+                    slashPuan += 50;
+
+
+                    document.getElementById("slashPuan").innerText =
+                        "Puan: " + slashPuan;
+
+
+                    top.remove();
+
+                }
+
+            });
+
+        }
+
+
+
+        /* DÜŞMAN ÇARPMASI */
+
+        function slashDusmanCarpisma() {
+
+            let dusmanlar =
+                document.querySelectorAll(".slashDusman");
+
+
+            dusmanlar.forEach(function(dusman) {
+
+                let x =
+                    parseFloat(dusman.dataset.x);
+
+                let y =
+                    parseFloat(dusman.dataset.y);
+
+
+                let dx =
+                    slashX - x;
+
+                let dy =
+                    slashY - y;
+
+
+                let mesafe =
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    );
+
+
+                if (mesafe < 7) {
+
+                    dusman.remove();
+
+
+                    slashCan--;
+
+
+                    document.getElementById("slashCan").innerText =
+                        "❤️ Can: " +
+                        slashCan;
+
+
+                    if (slashCan <= 0) {
+
+                        slashOyunBitti();
+
+                    }
+
+                }
+
+            });
+
+        }
+
+
+
+        /* SPACE = SALDIRI */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.code === "Space" &&
+                    slashAktif
+                ) {
+
+                    event.preventDefault();
+
+                    slashSaldir();
+
+                }
+
+            }
+        );
+
+
+        function slashSaldir() {
+
+            let kilic =
+                document.getElementById("slashKilic");
+
+
+            kilic.style.display =
+                "block";
+
+
+            kilic.style.left =
+                (slashX + 5) + "%";
+
+
+            kilic.style.top =
+                slashY + "%";
+
+
+            setTimeout(function() {
+
+                kilic.style.display =
+                    "none";
+
+            }, 200);
+
+
+            let dusmanlar =
+                document.querySelectorAll(".slashDusman");
+
+
+            dusmanlar.forEach(function(dusman) {
+
+                let x =
+                    parseFloat(dusman.dataset.x);
+
+                let y =
+                    parseFloat(dusman.dataset.y);
+
+
+                let dx =
+                    slashX - x;
+
+                let dy =
+                    slashY - y;
+
+
+                let mesafe =
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    );
+
+
+                if (mesafe < 15) {
+
+                    dusman.remove();
+
+
+                    slashPuan += 100;
+
+
+                    document.getElementById("slashPuan").innerText =
+                        "Puan: " + slashPuan;
+
+                }
+
+            });
+
+        }
+
+
+
+        /* WASD */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (!slashAktif) {
+                    return;
+                }
+
+
+                if (
+                    event.key === "w" ||
+                    event.key === "W"
+                ) {
+
+                    slashY -= 4;
+
+                }
+
+
+                if (
+                    event.key === "s" ||
+                    event.key === "S"
+                ) {
+
+                    slashY += 4;
+
+                }
+
+
+                if (
+                    event.key === "a" ||
+                    event.key === "A"
+                ) {
+
+                    slashX -= 4;
+
+                }
+
+
+                if (
+                    event.key === "d" ||
+                    event.key === "D"
+                ) {
+
+                    slashX += 4;
+
+                }
+
+
+                /* Sınırlar */
+
+                if (slashX < 5) {
+                    slashX = 5;
+                }
+
+                if (slashX > 95) {
+                    slashX = 95;
+                }
+
+                if (slashY < 5) {
+                    slashY = 5;
+                }
+
+                if (slashY > 92) {
+                    slashY = 92;
+                }
+
+
+                let oyuncu =
+                    document.getElementById("slashOyuncu");
+
+
+                oyuncu.style.left =
+                    slashX + "%";
+
+
+                oyuncu.style.top =
+                    slashY + "%";
+
+            }
+        );
+
+
+
+        function slashOyunBitti() {
+
+            slashAktif = false;
+
+
+            clearInterval(slashHareketTimer);
+            clearInterval(slashTopTimer);
+            clearInterval(slashDusmanTimer);
+            clearInterval(slashSaldiriTimer);
+
+
+            document.getElementById("slashSonuc").innerHTML =
+                "💥 OYUN BİTTİ!<br><br>" +
+
+                "🏆 Puanın: " +
+                slashPuan;
+
+        }
+
+    </script>
+
+</body>
 </html>
